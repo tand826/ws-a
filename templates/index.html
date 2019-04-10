@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="model_list">
+  <p>Models</p>
+  {% if models %}
+    {% for model in models %}
+    <li><a href="/infer/{{model}}">{{model}}</a></li>
+    {% endfor %}
+  {% else %}
+    <p></p>
+  {% endif %}
+</div>
+
+<div class="buttons new">
+  <button onclick="location.href='/new'">New Model</button>
+</div>
+
+<div class="buttons settings">
+  <button onclick="location.href='/settings'">Settings</button>
+</div>
+
+{% endblock %}

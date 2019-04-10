@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="page_title">
+  <p>Settings</p>
+    <div class="row">
+      <div class="col-xs-6 keys">
+        {% for key, _ in configs.items() %}
+          {{ key }}
+        {% endfor %}
+      </div>
+      <div class="col-xs-6 vals">
+        {% for _, val in configs.items() %}
+          {{ val }}
+        {% endfor %}
+      </div>
+    </div>
+</div>
+
+{% endblock %}
