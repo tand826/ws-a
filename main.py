@@ -46,7 +46,12 @@ def new():
 
 @app.route('/training/<path:wsidirname>')
 def training(wsidirname):
-    return render_template('training.html', wsidirname=wsidirname)
+    setup_training()
+    return render_template('training.html',
+                           wsidirname=wsidirname)
+
+def setup_training():
+    app.model = ""
 
 
 if __name__ == '__main__':
